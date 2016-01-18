@@ -30,15 +30,16 @@ user_pref("security.sri.enable",		true);
 // http://kb.mozillazine.org/Network.http.sendRefererHeader#0
 // https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 // Send a referer header with the target URI as the source
-//user_pref("network.http.sendRefererHeader",		1);
-user_pref("network.http.referer.spoofSource",		true);
+
+user_pref("network.http.sendRefererHeader",		2);
+//user_pref("network.http.referer.spoofSource",		true);
 // CIS Version 1.2.0 October 21st, 2011 2.4.3 Disable Referer from an SSL Website
 user_pref("network.http.sendSecureXSiteReferrer",		false);
 
 // CIS 2.5.1 Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
 // This breaks a number of payment gateways so you may need to comment it out.
-user_pref("network.cookie.cookieBehavior",		1);
+//user_pref("network.cookie.cookieBehavior",		1);
 // Make sure that third-party cookies (if enabled) never persist beyond the session.
 // https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly

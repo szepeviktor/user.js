@@ -161,6 +161,11 @@ user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
 // https://github.com/pyllyukko/user.js/issues/9#issuecomment-148922065
 user_pref("media.video_stats.enabled",		false);
 
+// Development tools
+user_pref("devtools.inspector.enabled", false);
+user_pref("devtools.debugger.enabled", false);
+user_pref("devtools.netmonitor.enabled", false);
+
 /******************************************************************************
  * extensions / plugins                                                       *
  *                                                                            *
@@ -174,7 +179,7 @@ user_pref("media.video_stats.enabled",		false);
 user_pref("extensions.getAddons.cache.enabled",   false);
 
 // Flash plugin state - never activate
-user_pref("plugin.state.flash",		0);
+user_pref("plugin.state.flash",		1);
 
 // disable Gnome Shell Integration
 user_pref("plugin.state.libgnome-shell-browser-plugin",	0);
@@ -189,7 +194,7 @@ user_pref("plugins.click_to_play",		true);
 
 // Updates addons automatically
 // https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/
-user_pref("extensions.update.enabled",		true);
+user_pref("extensions.update.enabled",		false);
 
 // http://kb.mozillazine.org/Extensions.blocklist.enabled
 user_pref("extensions.blocklist.enabled",		true);
@@ -217,7 +222,7 @@ user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 
 // Disable the built-in PDF viewer (CVE-2015-2743)
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743
-user_pref("pdfjs.disabled",		true);
+user_pref("pdfjs.disabled",		false);
 
 // Disable sending of the health report
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
@@ -244,11 +249,17 @@ user_pref("browser.selfsupport.url",		"");
 
 // Disable firefox hello
 // https://wiki.mozilla.org/Loop
-//user_pref("loop.enabled",		false);
+user_pref("loop.enabled",		false);
 
 // CIS 2.1.1 Enable Auto Update
 // This is disabled for now. it is better to patch through package management.
-//user_pref("app.update.auto", true);
+user_pref("app.update.auto", false);
+
+// Disable updates
+user_pref("app.update.enabled", false);
+user_pref("app.update.service.enabled", false);
+user_pref("browser.search.update", false);
+user_pref("extensions.update.enabled", false);
 
 // CIS 2.3.4 Block Reported Web Forgeries
 // http://kb.mozillazine.org/Browser.safebrowsing.enabled
@@ -270,6 +281,9 @@ user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 // Disable pocket
 // https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox
 user_pref("browser.pocket.enabled",		false);
+
+// Disable Reader
+user_pref("reader.parse-on-load.enabled", false);
 
 /******************************************************************************
  * automatic connections                                                      *
@@ -350,15 +364,16 @@ user_pref("security.sri.enable",		true);
 // http://kb.mozillazine.org/Network.http.sendRefererHeader#0
 // https://bugzilla.mozilla.org/show_bug.cgi?id=822869
 // Send a referer header with the target URI as the source
-//user_pref("network.http.sendRefererHeader",		1);
-user_pref("network.http.referer.spoofSource",		true);
+
+user_pref("network.http.sendRefererHeader",		2);
+//user_pref("network.http.referer.spoofSource",		true);
 // CIS Version 1.2.0 October 21st, 2011 2.4.3 Disable Referer from an SSL Website
 user_pref("network.http.sendSecureXSiteReferrer",		false);
 
 // CIS 2.5.1 Accept Only 1st Party Cookies
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior#1
 // This breaks a number of payment gateways so you may need to comment it out.
-user_pref("network.cookie.cookieBehavior",		1);
+//user_pref("network.cookie.cookieBehavior",		1);
 // Make sure that third-party cookies (if enabled) never persist beyond the session.
 // https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
@@ -385,55 +400,56 @@ user_pref("browser.cache.offline.enable",		false);
 // Always use private browsing
 // https://support.mozilla.org/en-US/kb/Private-Browsing
 // https://wiki.mozilla.org/PrivateBrowsing
-user_pref("browser.privatebrowsing.autostart",		true);
+user_pref("browser.privatebrowsing.autostart",		false);
 user_pref("extensions.ghostery.privateBrowsing",		true);
 
 // Clear history when Firefox closes
 // https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically
-user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
-user_pref("privacy.clearOnShutdown.cache",		true);
-user_pref("privacy.clearOnShutdown.cookies",		true);
-user_pref("privacy.clearOnShutdown.downloads",		true);
-user_pref("privacy.clearOnShutdown.formdata",		true);
-user_pref("privacy.clearOnShutdown.history",		true);
-user_pref("privacy.clearOnShutdown.offlineApps",		true);
-user_pref("privacy.clearOnShutdown.passwords",		true);
-user_pref("privacy.clearOnShutdown.sessions",		true);
+user_pref("privacy.sanitize.sanitizeOnShutdown",		false);
+user_pref("privacy.clearOnShutdown.cache",		false);
+user_pref("privacy.clearOnShutdown.cookies",		false);
+user_pref("privacy.clearOnShutdown.downloads",		false);
+user_pref("privacy.clearOnShutdown.formdata",		false);
+user_pref("privacy.clearOnShutdown.history",		false);
+user_pref("privacy.clearOnShutdown.offlineApps",		false);
+user_pref("privacy.clearOnShutdown.passwords",		false);
+user_pref("privacy.clearOnShutdown.sessions",		false);
 //user_pref("privacy.clearOnShutdown.siteSettings",		false);
 
 // don't remember browsing history
-user_pref("places.history.enabled",		false);
+user_pref("places.history.enabled",		true);
 
 // The cookie expires at the end of the session (when the browser closes).
 // http://kb.mozillazine.org/Network.cookie.lifetimePolicy#2
 user_pref("network.cookie.lifetimePolicy",		2);
 
 // http://kb.mozillazine.org/Browser.cache.disk.enable
-user_pref("browser.cache.disk.enable",		false);
+user_pref("browser.cache.disk.enable",		true);
 
 // http://kb.mozillazine.org/Browser.cache.memory.enable
 //user_pref("browser.cache.memory.enable",		false);
+user_pref("browser.cache.memory.capacity", 64000);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.8 Disable Caching of SSL Pages
 // http://kb.mozillazine.org/Browser.cache.disk_cache_ssl
-user_pref("browser.cache.disk_cache_ssl",		false);
+user_pref("browser.cache.disk_cache_ssl",		true);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.2 Disallow Credential Storage
 user_pref("signon.rememberSignons",		false);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.4 Delete History and Form Data
 // http://kb.mozillazine.org/Browser.history_expire_days
-user_pref("browser.history_expire_days",		0);
+//user_pref("browser.history_expire_days",		0);
 
 // http://kb.mozillazine.org/Browser.history_expire_sites
-user_pref("browser.history_expire_sites",		0);
+//user_pref("browser.history_expire_sites",		0);
 
 // http://kb.mozillazine.org/Browser.history_expire_visits
-user_pref("browser.history_expire_visits",		0);
+//user_pref("browser.history_expire_visits",		0);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.5 Delete Download History
 // Zero (0) is an indication that no download history is retained for the current profile.
-user_pref("browser.download.manager.retention",		0);
+//user_pref("browser.download.manager.retention",		0);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.6 Delete Search and Form History
 user_pref("browser.formfill.enable",		false);
@@ -452,6 +468,12 @@ user_pref("browser.helperApps.deleteTempFileOnExit",		true);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/browser.pagethumbnails.capturing_disabled
 user_pref("browser.pagethumbnails.capturing_disabled",		true);
 
+/*
+// Disable cache on non-ramdisk profiles
+user_pref("browser.cache.disk.enable", false);
+user_pref("browser.cache.memory.capacity", 256000); // 256 MB
+user_pref("places.history.enabled", false);
+*/
 /******************************************************************************
  * UI related                                                                 *
  *                                                                            *
@@ -461,11 +483,11 @@ user_pref("browser.pagethumbnails.capturing_disabled",		true);
 //user_pref("dom.event.contextmenu.enabled",		false);
 
 // CIS 2.3.2 Disable Downloading on Desktop
-user_pref("browser.download.folderList",		2);
+user_pref("browser.download.folderList",		1);
 
 // always ask the user where to download
 // https://developer.mozilla.org/en/Download_Manager_preferences
-user_pref("browser.download.useDownloadDir",		false);
+user_pref("browser.download.useDownloadDir",		true);
 
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
 user_pref("browser.newtabpage.enabled",		false);
@@ -494,7 +516,10 @@ user_pref("browser.urlbar.autoFill.typed",		false);
 // http://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
 // http://kb.mozillazine.org/Browser.urlbar.maxRichResults
 // "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
-user_pref("browser.urlbar.maxRichResults",		0);
+user_pref("browser.urlbar.maxRichResults",		12);
+
+// Hide "Search with Google" from awesomebar
+user_pref("browser.urlbar.unifiedcomplete", true);
 
 // https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
 // http://dbaron.org/mozilla/visited-privacy
@@ -503,7 +528,7 @@ user_pref("layout.css.visited_links_enabled",		false);
 // http://kb.mozillazine.org/Places.frecency.unvisited%28place_type%29Bonus
 
 // http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
-user_pref("browser.urlbar.autocomplete.enabled",		false);
+user_pref("browser.urlbar.autocomplete.enabled",		true);
 
 // http://kb.mozillazine.org/Signon.autofillForms
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
@@ -518,6 +543,10 @@ user_pref("security.ssl.warn_missing_rfc5746",		1);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.3 Disable Prompting for Credential Storage
 user_pref("security.ask_for_password",		0);
+
+// Double-click text selection
+user_pref("layout.word_select.stop_at_punctuation", false);
+user_pref("layout.word_select.eat_space_to_next_word", false);
 
 /******************************************************************************
  * TLS / HTTPS / OCSP related stuff                                           *
@@ -670,3 +699,24 @@ user_pref("security.ssl3.dhe_dss_camellia_256_sha",		false);
 // Fallbacks due compatibility reasons
 user_pref("security.ssl3.rsa_aes_256_sha",		true);
 user_pref("security.ssl3.rsa_aes_128_sha",		true);
+// Questions and notices on first run
+user_pref("browser.shell.checkDefaultBrowser", false);
+user_pref("browser.rights.3.shown", true);
+user_pref("browser.toolbarbuttons.introduced.pocket-button", false);
+user_pref("datareporting.healthreport.service.firstRun", true);
+user_pref("datareporting.policy.dataSubmissionPolicyBypassNotification", true);
+user_pref("browser.reader.detectedFirstArticle", true);
+user_pref("browser.displayedE10SPrompt.1", 1);
+user_pref("browser.displayedE10SNotice", 4);
+user_pref("browser.urlbar.userMadeSearchSuggestionsChoice", true);
+
+// e10s
+user_pref("browser.tabs.remote", true);
+user_pref("browser.tabs.remote.autostart", true);
+
+// Activate extensions in core
+user_pref("extensions.autoDisableScopes", 11); // 15 - 4 = ALL - SCOPE_APPLICATION
+user_pref("extensions.enabledScopes", 5); // 15 - 8 - 2 = ALL - SCOPE_SYSTEM - SCOPE_USER
+
+// uBlock Origin
+user_pref("extensions.ublock0.adminSettings", '{"userSettings":{"advancedUserEnabled":true}}');

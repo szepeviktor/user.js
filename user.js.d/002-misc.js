@@ -76,3 +76,8 @@ user_pref("gfx.font_rendering.opentype_svg.enabled",		false);
 // https://github.com/pyllyukko/user.js/issues/9#issuecomment-148922065
 user_pref("media.video_stats.enabled",		false);
 
+// Development tools
+user_pref("devtools.inspector.enabled", false);
+user_pref("devtools.debugger.enabled", false);
+user_pref("devtools.netmonitor.enabled", false);
+

@@ -11,7 +11,7 @@
 user_pref("extensions.getAddons.cache.enabled",   false);
 
 // Flash plugin state - never activate
-user_pref("plugin.state.flash",		0);
+user_pref("plugin.state.flash",		1);
 
 // disable Gnome Shell Integration
 user_pref("plugin.state.libgnome-shell-browser-plugin",	0);
@@ -26,7 +26,7 @@ user_pref("plugins.click_to_play",		true);
 
 // Updates addons automatically
 // https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/
-user_pref("extensions.update.enabled",		true);
+user_pref("extensions.update.enabled",		false);
 
 // http://kb.mozillazine.org/Extensions.blocklist.enabled
 user_pref("extensions.blocklist.enabled",		true);

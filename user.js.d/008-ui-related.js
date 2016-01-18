@@ -7,11 +7,11 @@
 //user_pref("dom.event.contextmenu.enabled",		false);
 
 // CIS 2.3.2 Disable Downloading on Desktop
-user_pref("browser.download.folderList",		2);
+user_pref("browser.download.folderList",		1);
 
 // always ask the user where to download
 // https://developer.mozilla.org/en/Download_Manager_preferences
-user_pref("browser.download.useDownloadDir",		false);
+user_pref("browser.download.useDownloadDir",		true);
 
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
 user_pref("browser.newtabpage.enabled",		false);
@@ -40,7 +40,10 @@ user_pref("browser.urlbar.autoFill.typed",		false);
 // http://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
 // http://kb.mozillazine.org/Browser.urlbar.maxRichResults
 // "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
-user_pref("browser.urlbar.maxRichResults",		0);
+user_pref("browser.urlbar.maxRichResults",		12);
+
+// Hide "Search with Google" from awesomebar
+user_pref("browser.urlbar.unifiedcomplete", true);
 
 // https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
 // http://dbaron.org/mozilla/visited-privacy
@@ -49,7 +52,7 @@ user_pref("layout.css.visited_links_enabled",		false);
 // http://kb.mozillazine.org/Places.frecency.unvisited%28place_type%29Bonus
 
 // http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
-user_pref("browser.urlbar.autocomplete.enabled",		false);
+user_pref("browser.urlbar.autocomplete.enabled",		true);
 
 // http://kb.mozillazine.org/Signon.autofillForms
 // https://www.torproject.org/projects/torbrowser/design/#identifier-linkability
@@ -64,4 +67,8 @@ user_pref("security.ssl.warn_missing_rfc5746",		1);
 
 // CIS Version 1.2.0 October 21st, 2011 2.5.3 Disable Prompting for Credential Storage
 user_pref("security.ask_for_password",		0);
+
+// Double-click text selection
+user_pref("layout.word_select.stop_at_punctuation", false);
+user_pref("layout.word_select.eat_space_to_next_word", false);
 

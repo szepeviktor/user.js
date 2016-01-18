@@ -21,7 +21,7 @@ user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 
 // Disable the built-in PDF viewer (CVE-2015-2743)
 // https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743
-user_pref("pdfjs.disabled",		true);
+user_pref("pdfjs.disabled",		false);
 
 // Disable sending of the health report
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
@@ -48,11 +48,17 @@ user_pref("browser.selfsupport.url",		"");
 
 // Disable firefox hello
 // https://wiki.mozilla.org/Loop
-//user_pref("loop.enabled",		false);
+user_pref("loop.enabled",		false);
 
 // CIS 2.1.1 Enable Auto Update
 // This is disabled for now. it is better to patch through package management.
-//user_pref("app.update.auto", true);
+user_pref("app.update.auto", false);
+
+// Disable updates
+user_pref("app.update.enabled", false);
+user_pref("app.update.service.enabled", false);
+user_pref("browser.search.update", false);
+user_pref("extensions.update.enabled", false);
 
 // CIS 2.3.4 Block Reported Web Forgeries
 // http://kb.mozillazine.org/Browser.safebrowsing.enabled
@@ -74,4 +80,7 @@ user_pref("browser.safebrowsing.downloads.remote.enabled",	false);
 // Disable pocket
 // https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox
 user_pref("browser.pocket.enabled",		false);
+
+// Disable Reader
+user_pref("reader.parse-on-load.enabled", false);
 
