@@ -92,7 +92,7 @@ user_pref("webgl.disabled",		true);
 user_pref("camera.control.face_detection.enabled",    false);
 
 // Default search engine
-//user_pref("browser.search.defaultenginename",		"DuckDuckGo");
+user_pref("browser.search.defaultenginename",		"Google");
 
 // http://kb.mozillazine.org/Clipboard.autocopy
 user_pref("clipboard.autocopy",		false);
@@ -216,7 +216,7 @@ user_pref("experiments.enabled",		false);
 
 // https://wiki.mozilla.org/Security/Tracking_protection
 // https://support.mozilla.org/en-US/kb/tracking-protection-firefox
-user_pref("privacy.trackingprotection.enabled",		true);
+user_pref("privacy.trackingprotection.enabled",		false);
 // https://support.mozilla.org/en-US/kb/tracking-protection-pbm
 user_pref("privacy.trackingprotection.pbmode.enabled",		true);
 

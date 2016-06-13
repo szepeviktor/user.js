@@ -7,7 +7,7 @@
 user_pref("camera.control.face_detection.enabled",    false);
 
 // Default search engine
-//user_pref("browser.search.defaultenginename",		"DuckDuckGo");
+user_pref("browser.search.defaultenginename",		"Google");
 
 // http://kb.mozillazine.org/Clipboard.autocopy
 user_pref("clipboard.autocopy",		false);
